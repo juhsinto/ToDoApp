@@ -25,7 +25,7 @@ export class NavMenu {
 
   constructor() {
     this.myMenuItems = [
-      new MenuItem('HOME', '/'),
+      new MenuItem('HOME', '/home'),
       new MenuItem('ABOUT', '/about'),
       new MenuItem('HELP', '/help'),
       ];
