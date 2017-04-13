@@ -8,7 +8,7 @@ import { TodoElement } from './todo-element.component';
   template: `
   <label for="usr">Todo Items:</label>
 
-    <todo-element>
+    <todo-element
       [todoList]="todoItems">
     </todo-element>
 
@@ -25,9 +25,12 @@ import { TodoElement } from './todo-element.component';
 })
 
 export class TodoContainer {
+
   todoItems: TodoItem[];
 
   constructor() {
+
+
     this.todoItems = [
       new TodoItem('do laundry @ 9am'),
       new TodoItem('put laundry to dry @ 10am'),

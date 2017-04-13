@@ -1,20 +1,18 @@
-<ul>
+<!-- <ul>
   <li *ngFor="let item of todoList">
     <p class="element"> {{ item.todoItem }} </p>
-    <p> asdfads </p>
   </li>
-</ul>
+</ul> -->
 
 
-<!-- 
-to get this working:
+
 <div class="list-group"  *ngFor="let item of todoList; let num = index">
 <a class="list-group-item clearfix">
-    Action1
+    {{ item.todoItem }}
     <span class="pull-right">
-        <span class="btn btn-xs btn-default" onclick="alert('delete');">
+        <span class="btn btn-xs btn-default" (click)="delete(todoList, num);">
             <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
         </span>
     </span>
 </a>
-</div> -->
+</div>
