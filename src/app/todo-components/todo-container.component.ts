@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TodoItem } from './todo-item';
 import { TodoElement } from './todo-element.component';
-
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'todo-container',
@@ -9,7 +9,7 @@ import { TodoElement } from './todo-element.component';
   <label for="usr">Todo Items:</label>
 
     <todo-element
-      [todoList]="todoItems">
+      [firebaseTodoList]="items">
     </todo-element>
 
 
@@ -26,24 +26,27 @@ import { TodoElement } from './todo-element.component';
 
 export class TodoContainer {
 
-  todoItems: TodoItem[];
+  //todoItems: TodoItem[];
+  items: FirebaseListObservable<any[]>;
 
-  constructor() {
+  constructor(private af: AngularFire) {
+    this.items = af.database.list('/items');
 
-
-    this.todoItems = [
-      new TodoItem('do laundry @ 9am'),
-      new TodoItem('put laundry to dry @ 10am'),
-    ];
   }
+
+
+
+
 
   addTodoItem(todoItem: HTMLInputElement): boolean {
     if(todoItem.value == "") {
       return false;
     } else {
       console.log(`Adding todo element ${todoItem.value}`);
-      this.todoItems.push(new TodoItem(todoItem.value));
+
+      this.items.push( todoItem.value );
       todoItem.value = '';
+
       return false;
     }
   }

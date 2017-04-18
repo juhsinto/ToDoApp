@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { AngularFireModule } from 'angularfire2';
+import { firebaseConfig } from './../environments/firebase.config';
 
 import { AppComponent } from './app.component';
 import { NavMenu } from './menu/nav-menu.component';
@@ -25,6 +27,7 @@ import { TodoElement } from './todo-components/todo-element.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot([
      {
        path: 'about',

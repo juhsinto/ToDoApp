@@ -1,18 +1,10 @@
-<!-- <ul>
-  <li *ngFor="let item of todoList">
-    <p class="element"> {{ item.todoItem }} </p>
-  </li>
-</ul> -->
-
-
-
-<div class="list-group"  *ngFor="let item of todoList; let num = index">
+<div class="list-group"  *ngFor="let item of firebaseTodoList | async">
 <a class="list-group-item clearfix">
-    {{ item.todoItem }}
+    {{item.$value}}
+
     <span class="pull-right">
-        <span class="btn btn-xs btn-default" (click)="delete(todoList, num);">
+        <span class="btn btn-xs btn-default" (click)="delete(item.$key);">
             <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
         </span>
     </span>
 </a>
-</div>
