@@ -1,5 +1,7 @@
 # ToDoApp
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
+### This application makes use of Angular components - I've split the sections of the application into logical groupings - the main core into 'todo-components', where most of the application logic resides.
 
-More read me content should be here.. I was too lazy to do it... 
+### This application uses FireBase for the database backend.
+
+### This application makes use of concepts such as Inputs (data passing between components), routing - where different sections (pages) of the app are separated, expressions, pipes, and forms.  

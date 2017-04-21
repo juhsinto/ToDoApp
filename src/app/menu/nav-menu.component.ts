@@ -9,14 +9,10 @@ import { MenuList } from './menu-list.component';
 @Component({
   selector: 'my-menu',
   template: `
-
-
     <menu-list
       [menuList]="myMenuItems">
     </menu-list>
-
   `
-
 })
 
 
